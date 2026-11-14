@@ -1,7 +1,13 @@
 { lib
 , rustPlatform
 , callPackage
-, kaiT2enSrc ? /mnt/src/KaiT2en-Fedora
+, fetchFromGitHub
+, kaiT2enSrc ? fetchFromGitHub {
+    owner = "66Ton99";
+    repo = "KaiT2en-Fedora";
+    rev = "f5d53a95a5150f21d3984202b303f8579f97baeb";
+    hash = "sha256-xbEG5dX6UQcl/9Lp7ippVsfrLS5Hla8la3IcfPgiC68=";
+  }
 , sksLockState ? callPackage ./sks-lock-state.nix { inherit kaiT2enSrc; }
 }:
 

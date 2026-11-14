@@ -80,8 +80,13 @@ in
 
       src = lib.mkOption {
         type = types.path;
-        default = /mnt/src/KaiT2en-Fedora;
-        description = "Path to the KaiT2en source repository providing Touch ID services and drivers.";
+        default = pkgs.fetchFromGitHub {
+          owner = "66Ton99";
+          repo = "KaiT2en-Fedora";
+          rev = "f5d53a95a5150f21d3984202b303f8579f97baeb";
+          hash = "sha256-xbEG5dX6UQcl/9Lp7ippVsfrLS5Hla8la3IcfPgiC68=";
+        };
+        description = "Source repository providing KaiT2en Touch ID services and drivers.";
       };
 
       bindUser = lib.mkOption {

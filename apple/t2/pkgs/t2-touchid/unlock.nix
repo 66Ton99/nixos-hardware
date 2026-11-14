@@ -5,8 +5,8 @@
 , kaiT2enSrc ? fetchFromGitHub {
     owner = "66Ton99";
     repo = "KaiT2en-Fedora";
-    rev = "23e66bacc724b6c2249b6fac4d7481515a961648";
-    hash = "sha256-sMyP6DFbbMDejodN0Xu2NKug4M5qqbNE5WibSx87uHo=";
+    rev = "b100a672e9bee3bf14921bea435aaccc49f28316";
+    hash = "sha256-1+F41hlaFPPFj1xvFxj7lTEsqyp8hBUgWc+FKsCTUps=";
   }
 , sksLockState ? callPackage ./sks-lock-state.nix { inherit kaiT2enSrc; }
 }:

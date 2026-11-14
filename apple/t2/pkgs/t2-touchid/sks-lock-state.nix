@@ -4,8 +4,8 @@
 , kaiT2enSrc ? fetchFromGitHub {
     owner = "66Ton99";
     repo = "KaiT2en-Fedora";
-    rev = "b100a672e9bee3bf14921bea435aaccc49f28316";
-    hash = "sha256-1+F41hlaFPPFj1xvFxj7lTEsqyp8hBUgWc+FKsCTUps=";
+    rev = "9b5672149b59ab9400ee8039d14208543d70c65f";
+    hash = "sha256-KO+UBw7V/r/jYSAhTfTz3z37Igy5kN9Q49/UAR2Kzkw=";
   }
 }:
 

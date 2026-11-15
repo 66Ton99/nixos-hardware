@@ -83,8 +83,8 @@ in
         default = pkgs.fetchFromGitHub {
           owner = "66Ton99";
           repo = "KaiT2en-Fedora";
-          rev = "b906a2d30e7f0f58fee7dd5d9d09f822b6b85fb3";
-          hash = "sha256-q1pzClRG7PEB9Kq4pK/bxfgG5N9+MXqSsq0qKD229QI=";
+          rev = "172ba3c60c724df336914aff135c590d95d37849";
+          hash = "sha256-qHmieZTG2NhL4m1Knxp/Y2EOG3V5p8kr4FXzgEF+gkg=";
         };
         description = "Source repository providing KaiT2en Touch ID services and drivers.";
       };
@@ -172,8 +172,14 @@ in
           kernel = config.boot.kernelPackages.kernel;
           kaiT2enSrc = t2Cfg.touchId.src;
         };
+        t2TouchIdLinkPkg = pkgs.callPackage ./pkgs/t2-touchid/t2_touchid_link.nix {
+          kernel = config.boot.kernelPackages.kernel;
+          kaiT2enSrc = t2Cfg.touchId.src;
+        };
       in
       {
+        boot.extraModulePackages = [ t2TouchIdLinkPkg ];
+
         services.fprintd.enable = true;
 
         systemd.services.fprintd = {
